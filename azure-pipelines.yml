@@ -158,6 +158,7 @@ stages:
             inputs:
               targetType: 'inline'
               script: | 
+                write-host  $(agent.releaseDirectory)
                 Write-Host "Auto Generated SQL Update Script:"
                 Get-Content d:\a\1\s\GeneratedOutputFiles\tailspindatabase_Script.sql | foreach {Write-Output $_}
           - task: PowerShell@2
